@@ -2,6 +2,18 @@
   font-family: "Asap";
   src: url("../public/fonts/AsapCondensed-Regular.ttf");
 }
+@font-face {
+  font-family: "poppins";
+  src: url("../public/fonts/Poppins-Bold.ttf");
+}
+@font-face {
+  font-family: "roboto bold";
+  src: url("../public/fonts/RobotoCondensed-Bold.ttf");
+}
+@font-face {
+  font-family: "roboto";
+  src: url("../public/fonts/RobotoCondensed-Regular.ttf");
+}
 
 html,
 body {

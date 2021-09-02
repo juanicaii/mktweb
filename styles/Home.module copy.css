@@ -25,7 +25,7 @@
 }
 
 .containerNav .nav .item {
-  margin: 0.5em;
+  margin: 0.7em;
   font-size: 1rem;
   color: #3751ff;
   transition: all 0.3s ease-in-out;
@@ -55,58 +55,18 @@
 }
 .main {
   width: 100%;
-  height: 70vh;
+  height: 85vh;
 
   background-repeat: no-repeat;
   padding-bottom: 200px;
-
   background-size: cover;
   overflow: hidden;
-  display: grid;
-  grid-template-columns: repeat(2, 50%);
-  align-items: center;
-  text-align: center;
 }
 .logo {
-  width: 180px;
+  width: 40%;
 }
 .main video {
   width: 100%;
-}
-.mainContent {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: -13px;
-}
-.mainTitle {
-  font-size: 4em;
-  color: white;
-  margin: 0;
-  padding: 0;
-  font-family: "poppins";
-}
-.mainTitle .span {
-  color: #ffbb32;
-}
-.mainSubTitle {
-  font-size: 2em;
-  display: block;
-  margin: 0em;
-  margin-bottom: 1em;
-  color: white;
-  font-family: "roboto bold";
-}
-.mainParraf {
-  color: white;
-  font-size: 1em;
-  color: #ffbb32;
-
-  font-family: "roboto";
-}
-.iso {
-  width: 50em;
-  overflow: hidden;
 }
 
 /* MEDIA QUERY */
@@ -142,9 +102,6 @@
   .menu {
     display: flex;
     justify-content: center;
-  }
-  .logo {
-    width: 120px;
   }
   .containerNavMob {
     height: 100%; /* 100% Full-height */

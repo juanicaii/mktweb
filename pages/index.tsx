@@ -6,7 +6,7 @@ import Main from "../components/Main";
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.containerMain}>
+    <div style={{ minHeight: 5000 }} className={styles.containerMain}>
       <Main />
     </div>
   );
