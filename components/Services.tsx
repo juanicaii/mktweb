@@ -52,8 +52,9 @@ const Services = () => {
       </h4>
 
       <div className={styles.containerServices}>
-        {DataServices.map((element) => (
+        {DataServices.map((element, index) => (
           <Service
+            key={index}
             image={element.image}
             title={element.title}
             info={element.info}
