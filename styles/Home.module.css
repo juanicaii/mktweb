@@ -1,6 +1,6 @@
 .header {
   display: grid;
-  grid-template-columns: repeat(3, 33.33%);
+  grid-template-columns: repeat(4, 1fr);
 
   margin: 0 auto;
   justify-content: center;
@@ -14,12 +14,18 @@
 }
 .containerLogo {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+
+  grid-area: 1 / 1 / 2 / 2;
+}
+.containerNav {
+  grid-area: 1 / 2 / 2 / 4;
 }
 .containerNav .nav {
   display: flex;
   list-style: none;
   margin: 0;
+  justify-content: center;
   text-align: left;
   padding: 0;
 }
@@ -37,7 +43,8 @@
 .containerContact {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  grid-area: 1 / 4 / 2 / 5;
 }
 .containerContact .contact {
   width: 100px;
@@ -55,7 +62,7 @@
 }
 .main {
   width: 100%;
-  height: 70vh;
+  height: 87vh;
 
   background-repeat: no-repeat;
   padding-bottom: 200px;
@@ -99,35 +106,164 @@
 }
 .mainParraf {
   color: white;
-  font-size: 1em;
+  font-size: 1.2em;
   color: #ffbb32;
-
+  margin: 0;
   font-family: "roboto";
 }
 .iso {
   width: 50em;
   overflow: hidden;
+  margin-top: -7em;
+  margin-left: -1.5em;
+}
+.containerServices {
+  display: flex;
+  flex-wrap: wrap;
+}
+.servicesTitle {
+  text-align: center;
+  color: #3751ff;
+  font-family: "poppins";
+  font-weight: bold;
+  font-size: 3em;
+  margin-top: 1.5em;
+}
+.servicesSubtitle {
+  text-align: center;
+  color: #3751ff;
+  opacity: 0.8;
+  font-family: "roboto";
+  font-size: 1.1em;
+}
+.containerService {
+  width: 33.33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.serviceImg {
+  width: 230px;
+  height: 230px;
+  margin: 10px auto;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  margin-top: 5em;
+}
+
+.serviceTitle {
+  font-size: 1.5em;
+  font-family: "poppins";
+  color: #3751ff;
+  margin: 0;
+}
+.serviceInfo {
+  font-size: 1em;
+  font-family: "roboto";
+  color: black;
+  margin: 0;
+  width: 50%;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.nosotros {
+  height: 80vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-gap: 1em;
+  margin-top: 3em;
+}
+.nosotrosText {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+.nosotrosText span {
+  color: #ffbb32;
+}
+.nosotrosText p span {
+  font-family: "roboto bold";
+}
+.nosotrosText h1 {
+  font-family: "poppins";
+  font-size: 3em;
+}
+.nosotrosText p {
+  font-size: 1.4em;
+  font-family: "roboto";
+  margin: 0 auto;
+  width: 90%;
+  margin-left: 4em;
+}
+.nosotrosImg img {
+  width: 100%;
+  margin-top: -5em;
+  display: flex;
+  justify-content: center;
 }
 
 /* MEDIA QUERY */
+
+@media (max-width: 1150px) {
+  .mainTitle {
+    font-size: 2.8em;
+  }
+  .mainSubTitle {
+    font-size: 1.7em;
+  }
+  .iso {
+    width: 45em;
+  }
+}
+@media (max-width: 992px) {
+  .containerNav .nav .item {
+    font-size: 0.9rem;
+  }
+  .mainTitle {
+    font-size: 2em;
+  }
+  .mainSubTitle {
+    font-size: 1.5em;
+  }
+  .mainParraf {
+    font-size: 1em;
+  }
+  .main {
+    height: 80vh;
+  }
+  .iso {
+    width: 40em;
+  }
+}
 
 @media (max-width: 768px) {
   .header {
     display: none;
   }
   .headerMobile {
-    display: grid;
-    grid-template-columns: repeat(3, 33%);
+    display: flex;
+    justify-content: space-around;
     border-bottom: 1px solid black;
     margin: 0 auto;
-    justify-content: center;
+
     align-items: center;
     grid-gap: 1em;
     font-family: "Asap";
     height: 4em;
     overflow-x: hidden;
   }
-
+  .containerContact {
+    justify-content: center;
+    width: 33.33%;
+  }
   .containerContact .contact {
     width: 75px;
     border-radius: 1em;
@@ -139,20 +275,26 @@
     color: white;
     transition: all 0.5s ease-out;
   }
+  .containerLogo {
+    justify-content: center;
+    width: 33.33%;
+  }
   .menu {
     display: flex;
     justify-content: center;
+    width: 33.33%;
   }
+
   .logo {
-    width: 120px;
+    width: 100px;
   }
   .containerNavMob {
     height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
+    width: 280px; /* 0 width - change this with JavaScript */
+    position: absolute; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
-    left: 0;
+    left: -18em;
     background-color: #111; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 17px; /* Place content 60px from the top */
@@ -176,10 +318,45 @@
     justify-content: flex-end;
     margin-right: 2em;
   }
+  .main {
+    height: 36vh;
+  }
+  .mainContent {
+    margin-top: 38px;
+    margin-right: 11px;
+  }
+  .mainTitle {
+    font-size: 1.22em;
+  }
+  .mainSubTitle {
+    font-size: 0.8em;
+  }
+  .mainParraf {
+    font-size: 0.6em;
+  }
+  .iso {
+    width: 24em;
+    margin-top: -3em;
+    margin-left: -6em;
+  }
 }
 
 @media (max-width: 600px) {
-  .headerMobile {
-    grid-template-columns: repeat(3, 116px);
+  .containerLogo,
+  .containerContact,
+  .menu {
+    width: 126.33px;
+  }
+  .iso {
+    width: 28em;
+  }
+}
+
+@media (max-width: 375px) {
+  .mainTitle {
+    font-size: 1em;
+  }
+  .iso {
+    width: 24em;
   }
 }

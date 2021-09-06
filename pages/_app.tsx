@@ -9,11 +9,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Header />
       <HeaderMobile isOpen={isOpen} setIsOpen={setIsOpen} />
       <div
-        style={{
-          marginLeft: isOpen ? 250 : 0,
-          transition: "margin-left 0.5s",
-          overflowX: "hidden",
-        }}
         onClick={() => {
           setIsOpen(false);
         }}

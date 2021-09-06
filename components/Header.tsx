@@ -6,8 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const urls = [
-  { url: "", name: "Sobre Nosotros" },
   { url: "", name: "Servicios" },
+  { url: "", name: "Nosotros" },
   { url: "", name: "Como Trabajamos" },
   { url: "", name: "Nuestros Trabajos" },
 ];
@@ -20,10 +20,8 @@ interface IHeaderMobileProps {
 export const HeaderMobile = ({ isOpen, setIsOpen }: IHeaderMobileProps) => {
   return (
     <>
-      <div
-        style={{ marginLeft: isOpen ? 250 : 0 }}
-        className={`${styles.headerMobile}`}
-      >
+      <div className={`${styles.headerMobile}`}>
+        {/* MENU */}
         <div className={`${styles.menu}`}>
           <FontAwesomeIcon
             onClick={() => setIsOpen(!isOpen)}
@@ -31,10 +29,16 @@ export const HeaderMobile = ({ isOpen, setIsOpen }: IHeaderMobileProps) => {
             icon={isOpen ? faTimes : faBars}
           />
         </div>
+        {/* Logo */}
+        <div className={`${styles.containerLogo}`}>
+          <img className={styles.logo} src={"./logo.png"} alt="Logo" />
+        </div>
+        {/* Contact */}
+        <div className={`${styles.containerContact}`}>
+          <button className={`${styles.contact}`}>Contacto</button>
+        </div>
         <div
-          style={{
-            width: isOpen ? 280 : 0,
-          }}
+          style={{ left: isOpen ? 0 : "-18em" }}
           className={styles.containerNavMob}
         >
           <div className={styles.closeNav}>
@@ -44,7 +48,7 @@ export const HeaderMobile = ({ isOpen, setIsOpen }: IHeaderMobileProps) => {
               icon={faTimes}
             />
           </div>
-          <ul className={`${styles.nav}`}>
+          <ul>
             {urls.map((url) => (
               <li key={url.name} className={`${styles.item}`}>
                 {url.name}
@@ -52,19 +56,12 @@ export const HeaderMobile = ({ isOpen, setIsOpen }: IHeaderMobileProps) => {
             ))}
           </ul>
         </div>
-        {/* Nav */}
+        {/* 
+        Nav
 
         {/* <div className={`${styles.containerNav}`}>
          
         </div> */}
-        {/* Logo */}
-        <div className={`${styles.containerLogo}`}>
-          <img className={styles.logo} src={"./logo.png"} alt="Logo" />
-        </div>
-        {/* Contact */}
-        <div className={`${styles.containerContact}`}>
-          <button className={`${styles.contact}`}>Contacto</button>
-        </div>
       </div>
     </>
   );

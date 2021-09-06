@@ -9,8 +9,15 @@ const Main = () => {
       style={{ backgroundImage: "url(./fondo.png)" }}
       className={`${styles.main}`}
     >
-      <div>
-        <img className={styles.iso} src="./isotipo.png" alt="" />
+      <div style={{ height: "inherit" }}>
+        <motion.img
+          initial={{ scale: 1 }}
+          animate={{ scale: 1.1 }}
+          exit={{ scale: 1 }}
+          className={styles.iso}
+          src="./isotipo.png"
+          alt=""
+        />
       </div>
       <div className={styles.mainContent}>
         <div className={styles.mainTitle}>
