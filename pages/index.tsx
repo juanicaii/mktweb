@@ -6,6 +6,8 @@ import Main from "../components/Main";
 import Services from "../components/Services";
 import Nosotros from "../components/Nosotros";
 import HowWork from "../components/HowWork";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 import { useRef } from "react";
 const Home: NextPage = () => {
   return (
@@ -14,6 +16,19 @@ const Home: NextPage = () => {
       <Services />
       <Nosotros />
       <HowWork />
+      <Contact />
+      <br />
+      <Footer />
+
+      <p className={styles.js}>
+        <img
+          onClick={() => {
+            window.location.href = "https://juanignacioseijas.com.ar/";
+          }}
+          src="./JS.svg"
+          alt=""
+        />
+      </p>
     </div>
   );
 };

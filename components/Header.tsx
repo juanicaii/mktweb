@@ -38,7 +38,10 @@ export const HeaderMobile = ({ isOpen, setIsOpen }: IHeaderMobileProps) => {
           <button className={`${styles.contact}`}>Contacto</button>
         </div>
         <div
-          style={{ left: isOpen ? 0 : "-18em" }}
+          style={{
+            left: isOpen ? 0 : "-18em",
+            backgroundImage: "url(./fondo-vertical.png)",
+          }}
           className={styles.containerNavMob}
         >
           <div className={styles.closeNav}>

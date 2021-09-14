@@ -225,7 +225,7 @@
   margin: 0 auto;
   z-index: -1; */
 }
-/* MEDIA QUERY */
+
 .subTitle {
   font-size: 1.3em;
   color: #3751ff;
@@ -258,6 +258,71 @@
 .step img {
   width: 20em;
 }
+
+.divContact {
+  height: 20em;
+  background-color: red;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.divContact p {
+  font-size: 2.3em;
+  color: white;
+  font-family: "poppins";
+  text-align: center;
+}
+
+.divContact button {
+  width: 15em;
+  border-radius: 1.2em;
+  border: none;
+  height: 3em;
+  font-family: "Asap";
+  background-color: #3751ff;
+  color: white;
+  cursor: pointer;
+  font-family: "poppins";
+  font-size: 1.3em;
+}
+
+.divContact button:hover {
+  background-color: white;
+  color: #3751ff;
+  font-family: "poppins";
+  transition: all ease 0.3s;
+}
+.footer {
+  display: flex;
+  height: 3em;
+  justify-content: center;
+  margin: 0 auto;
+  margin-left: 12px;
+}
+.footer svg {
+  margin: 0 1em;
+  cursor: pointer;
+}
+
+.footer svg:hover {
+  transform: scale(1.1);
+  transition: ease 0.3s all;
+}
+.js {
+  font-size: 1.3em;
+  font-family: "poppins";
+  color: #3751ff;
+  text-align: center;
+}
+.js img {
+  width: 40px;
+  cursor: pointer;
+}
+/* MEDIA QUERY */
 @media (max-width: 1150px) {
   .mainTitle {
     font-size: 2.8em;
@@ -287,6 +352,21 @@
   }
   .iso {
     width: 40em;
+  }
+  .divContact p {
+    font-size: 1.5em;
+  }
+  .divContact button {
+    width: 15em;
+    border-radius: 1.2em;
+    border: none;
+    height: 3em;
+    font-family: "Asap";
+    background-color: #3751ff;
+    color: white;
+    cursor: pointer;
+    font-family: "poppins";
+    font-size: 1em;
   }
 }
 
@@ -345,15 +425,22 @@
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 17px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-    background-color: #3751ff;
+    background-color: red;
     color: white;
+    background-position: center;
   }
-  .containerNavMob .nav {
+
+  .containerNavMob ul {
     list-style: none;
-    font-size: 2em;
+    font-size: 1.8em;
   }
-  .containerNavMob .nav .item {
+  .containerNavMob ul .item {
     margin: 0.8em 0em;
+  }
+
+  .containerNavMob ul .item:hover {
+    opacity: 0.5;
+    transition: ease 1s;
   }
   .body,
   .headerMobile {
