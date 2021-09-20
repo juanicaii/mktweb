@@ -152,8 +152,11 @@
   background-size: cover;
   border-radius: 50%;
   margin-top: 5em;
+  transition: all ease 0.3s;
 }
-
+.serviceImg:hover {
+  transform: scale(1.1);
+}
 .serviceTitle {
   font-size: 1.5em;
   font-family: "poppins";
@@ -288,6 +291,7 @@
   cursor: pointer;
   font-family: "poppins";
   font-size: 1.3em;
+  transition: all ease 0.3s;
 }
 
 .divContact button:hover {
@@ -321,6 +325,30 @@
 .js img {
   width: 40px;
   cursor: pointer;
+}
+.wpp {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  z-index: 100;
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+.wpp:hover {
+  transform: scale(1.2);
+  transition: all ease-in-out 0.3s;
+}
+
+.wpp svg {
+  margin-top: 14px;
+  width: 2em;
 }
 /* MEDIA QUERY */
 @media (max-width: 1150px) {
