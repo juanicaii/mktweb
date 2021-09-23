@@ -109,10 +109,12 @@ const ModalContact = ({ isOpen, onClose }: ModalContact) => {
                     <Input
                       id="name"
                       placeholder="Nombre"
+                      //@ts-ignore
                       {...register("name")}
                     />
 
                     <FormErrorMessage>
+                      {/* @ts-ignore */}
                       {errors.name && errors.name.message}
                     </FormErrorMessage>
                   </FormControl>
@@ -121,9 +123,11 @@ const ModalContact = ({ isOpen, onClose }: ModalContact) => {
                     <Input
                       id="lastname"
                       placeholder="Apellido"
+                      //@ts-ignore
                       {...register("lastname")}
                     />
                     <FormErrorMessage>
+                      {/* @ts-ignore */}
                       {errors.lastname && errors.lastname.message}
                     </FormErrorMessage>
                   </FormControl>
@@ -135,9 +139,11 @@ const ModalContact = ({ isOpen, onClose }: ModalContact) => {
                       id="email"
                       type="email"
                       placeholder="Correo Electronico"
+                      //@ts-ignore
                       {...register("email")}
                     />
                     <FormErrorMessage>
+                      {/* @ts-ignore */}
                       {errors.email && errors.email.message}
                     </FormErrorMessage>
                   </FormControl>
@@ -147,9 +153,11 @@ const ModalContact = ({ isOpen, onClose }: ModalContact) => {
                       id="org"
                       type="text"
                       placeholder="Empresa"
+                      //@ts-ignore
                       {...register("org")}
                     />
                     <FormErrorMessage>
+                      {/* @ts-ignore */}
                       {errors.org && errors.org.message}
                     </FormErrorMessage>
                   </FormControl>
@@ -162,9 +170,11 @@ const ModalContact = ({ isOpen, onClose }: ModalContact) => {
                   id="msg"
                   type="text"
                   placeholder="Mensaje"
+                  //@ts-ignore
                   {...register("msg")}
                 />
                 <FormErrorMessage>
+                  {/* @ts-ignore */}
                   {errors.msg && errors.msg.message}
                 </FormErrorMessage>
               </FormControl>
