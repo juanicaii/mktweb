@@ -27,10 +27,7 @@ const Home: NextPage = () => {
       <br />
       <Footer />
       <a
-        href={`https://wa.me/${datos.numero}?text=${datos.mensaje.replaceAll(
-          " ",
-          "%20"
-        )}`}
+        href={`https://wa.me/${datos.numero}?text=${datos.mensaje}`}
         className={styles.wpp}
       >
         <FontAwesomeIcon icon={faWhatsapp} />
