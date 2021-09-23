@@ -7,6 +7,7 @@ import {
   createTransport,
   getTestMessageUrl,
 } from "nodemailer";
+import SMTPConnection from "nodemailer/lib/smtp-connection";
 type Response = {
   message: string;
 };
@@ -45,33 +46,39 @@ export default async function handler(
       },
     ]);
 
-    let testAccount = await createTestAccount();
+    const optionsTransport = {
+      host: process.env.EMAIL_HOST,
+      port: parseInt(process.env.EMAIL_PORT ? process.env.EMAIL_PORT : "1"),
+      secure: true,
 
-    const transporter = createTransport({
-      host: "smtp.ethereal.email",
-      port: 587,
-      secure: false,
-      auth: {
-        user: testAccount.user,
-        pass: testAccount.pass,
+      secureConnection: false, // TLS requires secureConnection to be false
+      tls: {
+        ciphers: "SSLv3",
       },
-    });
+      requireTLS: true,
+
+      auth: {
+        user: process.env.EMAIL,
+        pass: process.env.EMAIL_PASSWORD,
+      },
+      service: process.env.SERVICE,
+    };
+    console.log(optionsTransport);
+    const transporter = createTransport(optionsTransport);
 
     // send mail with defined transport object
     const info = await transporter.sendMail({
-      from: '"Fred Foo 👻" <foo@example.com>', // sender address
-      to: body.email, // list of receivers
+      from: body.email, // sender address
+      to: process.env.EMAIL, // list of receivers
       subject: "Contacto de " + body.name, // Subject line
       text: `${body.message}`, // plain text body
       html: `<b>${body.message}</b>`, // html body
     });
 
-    // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou.
-    // Preview only available when sending through an Ethereal account
-    console.log("Preview URL: %s", getTestMessageUrl(info));
     // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou.....
     res.status(200).json({ message: "Mensaje enviado correctamente" });
   } catch (err) {
     console.log(err);
+    res.status(500).json({ message: "Hubo un error" });
   }
 }
