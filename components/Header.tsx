@@ -4,6 +4,8 @@ import Image from "next/image";
 import logo from "../public/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { useDisclosure } from "@chakra-ui/react";
+import ModalContact from "./ModalContact";
 
 const urls = [
   { url: "", name: "Servicios" },
@@ -71,8 +73,10 @@ export const HeaderMobile = ({ isOpen, setIsOpen }: IHeaderMobileProps) => {
 };
 
 const Header = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <div className={`${styles.header}`}>
+      <ModalContact isOpen={isOpen} onClose={onClose} />
       {/* Logo */}
       <div className={`${styles.containerLogo}`}>
         <img className={styles.logo} src={"./logo.png"} alt="Logo" />
@@ -89,7 +93,9 @@ const Header = () => {
       </div>
       {/* Contact */}
       <div className={`${styles.containerContact}`}>
-        <button className={`${styles.contact}`}>Contacto</button>
+        <button onClick={onOpen} className={`${styles.contact}`}>
+          Contacto
+        </button>
       </div>
     </div>
   );
