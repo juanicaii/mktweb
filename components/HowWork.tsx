@@ -16,6 +16,7 @@ interface IStep {
   list: Array<String>;
   img: string;
   width: number;
+  marginLeft:number;
 }
 const Title = ({ text, size, letterSub, imagePostion, align }: ITitle) => {
   return (
@@ -42,7 +43,7 @@ const Title = ({ text, size, letterSub, imagePostion, align }: ITitle) => {
   );
 };
 
-const StepWork = ({ align, title, letterSub, list, img, width }: IStep) => {
+const StepWork = ({ align, title, letterSub, list, img, width,marginLeft }: IStep) => {
   return (
     <div className={styles.step}>
       {align == 0 ? <img src={img} alt="" /> : ""}
@@ -58,6 +59,7 @@ const StepWork = ({ align, title, letterSub, list, img, width }: IStep) => {
         <ul
           style={{
             listStyleImage: "url(./linea.png)",
+            marginLeft:marginLeft
           }}
         >
           {list.map((element, index) => (
@@ -91,6 +93,7 @@ const HowWork = () => {
       title: "Planificación ",
       subLetter: `Estratégica `,
       align: 0,
+      marginLeft:0,
       ul: [
         ` Realizaremos preguntas claves mediante formularios para entender más
       a fondo el negocio y qué objetivos se quiere alcanzar.`,
@@ -106,6 +109,7 @@ const HowWork = () => {
       title: "",
       subLetter: `Diseño `,
       align: width > 768 ? 1 : 0,
+      marginLeft:65,
       ul: [
         ` Diseñaremos un plan de acción partiendo de objetivos comerciales y haremos el set up de cuentas.`,
         ` En caso de requerirlo, comenzamos a correr campañas y crear los públicos. Se presentará de manera oficial el plan de acción.`,
@@ -116,6 +120,7 @@ const HowWork = () => {
       title: "",
       subLetter: `Implementación `,
       align: 0,
+      marginLeft:0,
       ul: [
         ` Implementaremos el plan de acción.`,
         `Crearemos reportes de manera mensual para que tengan en tiempo real y mes a mes, los resultados.`,
@@ -126,6 +131,7 @@ const HowWork = () => {
       title: "",
       subLetter: `Optimización `,
       align: width > 768 ? 1 : 0,
+      marginLeft:65,
       ul: [
         `   Una vez implementado todo el plan, iremos optimizando y revisando para poder generar un crecimiento mes a mes.`,
       ],
@@ -156,6 +162,7 @@ const HowWork = () => {
             letterSub={element.subLetter}
             align={element.align}
             list={element.ul}
+            marginLeft={element.marginLeft}
             img={element.img}
           />
         ))}
