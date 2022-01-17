@@ -11,6 +11,7 @@ import Footer from "../components/Footer";
 import { useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+
 const Home: NextPage = () => {
   const datos = {
     numero: "1125857074",
@@ -32,15 +33,17 @@ const Home: NextPage = () => {
       >
         <FontAwesomeIcon icon={faWhatsapp} />
       </a>
-      <p className={styles.js}>
-        <img
+      <div className={styles.js}>
+        <Image
           onClick={() => {
             window.location.href = "https://juanignacioseijas.com.ar/ ";
           }}
-          src="./JS.svg"
+          width={40}
+          height={40}
+          src="/JS.svg"
           alt=""
         />
-      </p>
+      </div>
     </div>
   );
 };

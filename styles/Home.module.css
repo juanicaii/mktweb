@@ -182,6 +182,7 @@
   grid-template-columns: repeat(2, 50%);
   grid-gap: 1em;
   margin-top: 3em;
+  align-items: center;
 }
 .nosotrosText {
   height: inherit;
@@ -189,6 +190,7 @@
   flex-direction: column;
   align-items: center;
   color: white;
+  margin-top: 26px;
 }
 .nosotrosText span {
   color: #ffbb32;
@@ -207,7 +209,7 @@
   width: 90%;
   margin-left: 4em;
 }
-.nosotrosImg{
+.nosotrosImg {
   width: 97%;
 }
 .nosotrosImg img {
@@ -331,15 +333,10 @@
   padding-bottom: 10px;
 }
 .js img {
-  width: 40px;
   cursor: pointer;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
-.js img:hover{
-  transform: scale(1.3);
-  transform: .3s all ease;
-}
 .wpp {
   position: fixed;
   width: 60px;

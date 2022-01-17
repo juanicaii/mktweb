@@ -3,7 +3,7 @@ import Service from "./Service";
 
 const DataServices = [
   {
-    image: "googleads.png",
+    image: "google.png",
     title: `SEM`,
     info: `
     Creamos anuncios en el motor de busqueda Google Ads`,

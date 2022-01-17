@@ -48,7 +48,7 @@ export default async function handler(
 
     const optionsTransport = {
       host: process.env.EMAIL_HOST,
-      port: parseInt(process.env.EMAIL_PORT ? process.env.EMAIL_PORT : "1"),
+      port: parseInt(process.env.EMAIL_PORT ?? "1"),
       secure: true,
 
       secureConnection: false, // TLS requires secureConnection to be false

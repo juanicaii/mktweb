@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import styles from "../styles/Home.module.css";
-
+import Image from "next/image";
 interface ITitle {
   text: string;
   size: string;
@@ -16,7 +16,7 @@ interface IStep {
   list: Array<String>;
   img: string;
   width: number;
-  marginLeft:number;
+  marginLeft: number;
 }
 const Title = ({ text, size, letterSub, imagePostion, align }: ITitle) => {
   return (
@@ -43,10 +43,18 @@ const Title = ({ text, size, letterSub, imagePostion, align }: ITitle) => {
   );
 };
 
-const StepWork = ({ align, title, letterSub, list, img, width,marginLeft }: IStep) => {
+const StepWork = ({
+  align,
+  title,
+  letterSub,
+  list,
+  img,
+  width,
+  marginLeft,
+}: IStep) => {
   return (
     <div className={styles.step}>
-      {align == 0 ? <img src={img} alt="" /> : ""}
+      {align == 0 ? <Image width={200} height={200} src={img} alt="" /> : ""}
 
       <div className={styles.list}>
         <Title
@@ -59,7 +67,7 @@ const StepWork = ({ align, title, letterSub, list, img, width,marginLeft }: ISte
         <ul
           style={{
             listStyleImage: "url(./linea.png)",
-            marginLeft:marginLeft
+            marginLeft: marginLeft,
           }}
         >
           {list.map((element, index) => (
@@ -67,7 +75,7 @@ const StepWork = ({ align, title, letterSub, list, img, width,marginLeft }: ISte
           ))}
         </ul>
       </div>
-      {align == 1 ? <img src={img} alt="" /> : ""}
+      {align == 1 ? <Image width={200} height={200} src={img} alt="" /> : ""}
     </div>
   );
 };
@@ -89,11 +97,11 @@ const HowWork = () => {
 
   const list = [
     {
-      img: "./1.png",
+      img: "/1.png",
       title: "Planificación ",
       subLetter: `Estratégica `,
       align: 0,
-      marginLeft:0,
+      marginLeft: 0,
       ul: [
         ` Realizaremos preguntas claves mediante formularios para entender más
       a fondo el negocio y qué objetivos se quiere alcanzar.`,
@@ -105,33 +113,33 @@ const HowWork = () => {
       ],
     },
     {
-      img: "./2.png",
+      img: "/2.png",
       title: "",
       subLetter: `Diseño `,
       align: width > 768 ? 1 : 0,
-      marginLeft:65,
+      marginLeft: 65,
       ul: [
         ` Diseñaremos un plan de acción partiendo de objetivos comerciales y haremos el set up de cuentas.`,
         ` En caso de requerirlo, comenzamos a correr campañas y crear los públicos. Se presentará de manera oficial el plan de acción.`,
       ],
     },
     {
-      img: "./3.png",
+      img: "/3.png",
       title: "",
       subLetter: `Implementación `,
       align: 0,
-      marginLeft:0,
+      marginLeft: 0,
       ul: [
         ` Implementaremos el plan de acción.`,
         `Crearemos reportes de manera mensual para que tengan en tiempo real y mes a mes, los resultados.`,
       ],
     },
     {
-      img: "./4.png",
+      img: "/4.png",
       title: "",
       subLetter: `Optimización `,
       align: width > 768 ? 1 : 0,
-      marginLeft:65,
+      marginLeft: 65,
       ul: [
         `   Una vez implementado todo el plan, iremos optimizando y revisando para poder generar un crecimiento mes a mes.`,
       ],
